@@ -125,10 +125,10 @@ if (fid > 0)
 
     if (settings.fileType==1) %Real Data
         subplot(2,2,1:2);
-        pwelch(data, 32758, 2048, 16368, settings.samplingFreq/1e6)
+        pwelch(data, 32758, 0.0625, 16368, settings.samplingFreq/1e6)
     else % I/Q Data
         subplot(3,2,1:2);
-        [sigspec,freqv]=pwelch(data, 32758, 2048, 16368, settings.samplingFreq,'twosided');
+        [sigspec,freqv]=pwelch(data, 32758, 0.0625, 16368, settings.samplingFreq,'twosided');
         plot(([-(freqv(length(freqv)/2:-1:1));freqv(1:length(freqv)/2)])/1e6, ...
             10*log10([sigspec(length(freqv)/2+1:end);
             sigspec(1:length(freqv)/2)]));

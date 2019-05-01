@@ -234,7 +234,6 @@ for channelNr = 1:settings.numberOfChannels
             % data - better exit
             if (samplesRead ~= dataAdaptCoeff*blksize)
                 disp('Not able to read the specified number of samples  for tracking, exiting!')
-                fclose(fid);
 
                 return
             end
